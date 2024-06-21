@@ -5,9 +5,9 @@ metadata:
 spec:
   containers:
   - name: nginx
-    image: nginx:1.14.2
+    image: nginx:1.27.0
     ports:
-    - containerPort: 81
+    - containerPort: 80
 ---
 apiVersion: batch/v1
 kind: Job
