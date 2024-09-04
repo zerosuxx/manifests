@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: test-cm
 data:
-  APP_ENV: test
+  APP_ENV: test2
 ---
 apiVersion: batch/v1
 kind: Job
