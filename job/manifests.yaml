@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: test-cm
 data:
-  APP_ENV: test7
+  APP_ENV: test8
 # ---
 # apiVersion: v1
 # kind: Pod
@@ -23,11 +23,11 @@ data:
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: app-slack-notification-7
+  name: app-slack-notification-8
   annotations:
-    argocd.argoproj.io/sync-options: Force=true,Replace=true
+    #argocd.argoproj.io/sync-options: Force=true,Replace=true
     argocd.argoproj.io/hook: PostSync
-    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+    #argocd.argoproj.io/hook-delete-policy: HookSucceeded
 spec:
   template:
     spec:
@@ -36,6 +36,6 @@ spec:
         image: zerosuxx/alpine
         command:
           - echo
-          - "Hello World 7"
+          - "Hello World 8"
       restartPolicy: Never
   backoffLimit: 3
