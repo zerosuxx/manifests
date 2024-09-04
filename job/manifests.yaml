@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: test-cm
 data:
-  APP_ENV: test3
+  APP_ENV: test4
 # ---
 # apiVersion: v1
 # kind: Pod
@@ -23,7 +23,7 @@ data:
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: app-slack-notification-3
+  name: app-slack-notification-4
   # annotations:
    # argocd.argoproj.io/hook: PostSync
    # argocd.argoproj.io/hook-delete-policy: HookSucceeded
@@ -35,6 +35,6 @@ spec:
         image: zerosuxx/alpine
         command:
           - echo
-          - "Hello World 3"
+          - "Hello World 4"
       restartPolicy: Never
   backoffLimit: 3
