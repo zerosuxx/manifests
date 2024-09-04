@@ -11,6 +11,8 @@ metadata:
   name: myapp-pod
   labels:
     app.kubernetes.io/name: MyApp
+  annotations:
+    argocd.argoproj.io/sync-options: Replace=true
 spec:
   containers:
   - name: app
