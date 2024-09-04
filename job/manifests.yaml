@@ -4,38 +4,37 @@ metadata:
   name: test-cm
 data:
   APP_ENV: test3
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: myapp-pod
-  labels:
-    app.kubernetes.io/name: MyApp
-  annotations:
-    argocd.argoproj.io/sync-options: Replace=true
-spec:
-  containers:
-  - name: app
-    image: busybox:1.28
-    command: ['sh', '-c', "sleep 2"]
-  restartPolicy: Never
----
-# apiVersion: batch/v1
-# kind: Job
+# ---
+# apiVersion: v1
+# kind: Pod
 # metadata:
-#   generateName: app-slack-notification-
-#   #name: app-slack-notification
-#   #annotations:
-#   #  argocd.argoproj.io/hook: PostSync
-#   #  argocd.argoproj.io/hook-delete-policy: HookSucceeded
+#   name: myapp-pod
+#   labels:
+#     app.kubernetes.io/name: MyApp
+#   annotations:
+#     argocd.argoproj.io/sync-options: Replace=true
 # spec:
-#   template:
-#     spec:
-#       containers:
-#       - name: slack-notification
-#         image: zerosuxx/alpine
-#         command:
-#           - echo
-#           - "Hello World"
-#       restartPolicy: Never
-#   backoffLimit: 3
+#   containers:
+#   - name: app
+#     image: busybox:1.28
+#     command: ['sh', '-c', "sleep 2"]
+#   restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: app-slack-notification-1
+  annotations:
+   argocd.argoproj.io/hook: PostSync
+   argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  template:
+    spec:
+      containers:
+      - name: slack-notification
+        image: zerosuxx/alpine
+        command:
+          - echo
+          - "Hello World 1"
+      restartPolicy: Never
+  backoffLimit: 3
