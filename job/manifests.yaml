@@ -15,4 +15,4 @@ spec:
           - echo
           - "Hello World"
       restartPolicy: Never
-  backoffLimit: 2
+  backoffLimit: 3
