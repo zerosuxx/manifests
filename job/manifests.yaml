@@ -23,7 +23,7 @@ data:
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: app-slack-notification-1
+  name: app-slack-notification-2
   annotations:
    argocd.argoproj.io/hook: PostSync
    argocd.argoproj.io/hook-delete-policy: HookSucceeded
@@ -35,6 +35,6 @@ spec:
         image: zerosuxx/alpine
         command:
           - echo
-          - "Hello World 1"
+          - "Hello World 2"
       restartPolicy: Never
   backoffLimit: 3
