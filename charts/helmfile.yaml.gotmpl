@@ -1,0 +1,5 @@
+helmfiles:
+  - path: ingress-nginx/helmfile.yaml.gotmpl
+  - path: cert-manager/helmfile.yaml.gotmpl
+    values:
+      - certIssuerEmail: {{ requiredEnv "CERT_ISSUER_EMAIL" }}
