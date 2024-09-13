@@ -1,0 +1,21 @@
+controller:
+  kind: DaemonSet
+#  metrics:
+#    enabled: true
+#  podAnnotations:
+#    prometheus.io/port: "10254"
+#    prometheus.io/scrape: "true"
+
+  config:
+    log-format-escape-json: true
+    error-log-level: warn
+    large-client-header-buffers: "4 32k"
+    http-snippet: |
+      map $upstream_response_time $safe_upstream_response_time {
+        default $upstream_response_time;
+        ""      0;
+      }
+      map $upstream_response_length $safe_upstream_response_length {
+        default $upstream_response_length;
+        ""      0;
+      }

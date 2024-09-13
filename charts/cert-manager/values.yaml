@@ -1,0 +1,12 @@
+replicaCount: 2
+
+#extraArgs:
+#  - --feature-gates=ExperimentalGatewayAPISupport=true
+
+installCRDs: true
+
+enableCertificateOwnerRef: true
+
+ingressShim:
+  defaultIssuerKind: ClusterIssuer
+  defaultIssuerName: letsencrypt-prod
