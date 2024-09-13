@@ -3,3 +3,13 @@ helmfiles:
   - path: cert-manager/helmfile.yaml.gotmpl
     values:
       - certIssuerEmail: {{ requiredEnv "CERT_ISSUER_EMAIL" }}
+---
+releases:
+  - name: hello
+    namespace: apps
+    chart: ./hello
+    version: v1.0.0
+    installed: true
+    values:
+      - ingress:
+          host: {{ requiredEnv "HELLO_DOMAIN" }}

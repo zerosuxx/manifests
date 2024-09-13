@@ -1,0 +1,4 @@
+apiVersion: v2
+name: hello
+version: 1.0.0
+description: "Local chart to install hello app"
