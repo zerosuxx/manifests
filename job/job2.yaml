@@ -4,21 +4,6 @@ metadata:
   name: app-job-2
 data:
   APP_ENV: test2
-# ---
-# apiVersion: v1
-# kind: Pod
-# metadata:
-#   name: myapp-pod
-#   labels:
-#     app.kubernetes.io/name: MyApp
-#   annotations:
-#     argocd.argoproj.io/sync-options: Replace=true
-# spec:
-#   containers:
-#   - name: app
-#     image: busybox:1.28
-#     command: ['sh', '-c', "sleep 2"]
-#   restartPolicy: Never
 ---
 apiVersion: batch/v1
 kind: Job
