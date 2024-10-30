@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: sts-1
+spec:
+  #serviceName: "sts"
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sts-1
+  template:
+    metadata:
+      labels:
+        app: sts-1
+    spec:
+      containers:
+      - name: app
+        image: zerosuxx/alpine
+        command:
+          - sleep
+          - Infinity
+        volumeMounts:
+        - name: sts-data-1
+          mountPath: /shared
+  volumeClaimTemplates:
+  - metadata:
+      name: sts-data-1
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Mi
