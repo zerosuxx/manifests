@@ -24,7 +24,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: app-job-2
-  #annotations:
+  annotations:
     #argocd.argoproj.io/sync-options: Force=true,Replace=true
     argocd.argoproj.io/sync-wave: "-1"
     #argocd.argoproj.io/hook: PostSync
