@@ -36,7 +36,7 @@ spec:
       - name: app-job-2
         image: zerosuxx/alpine
         command:
-          - echo
-          - "2"
+          - sleep
+          - 10
       restartPolicy: Never
   backoffLimit: 3
