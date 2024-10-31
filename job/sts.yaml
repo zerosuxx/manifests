@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: sts-1
+  annotations:
+    argocd.argoproj.io/sync-options: Force=true
 spec:
   #serviceName: "sts"
   replicas: 1
