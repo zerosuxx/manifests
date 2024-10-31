@@ -23,7 +23,7 @@ spec:
         - name: sts-data-1
           mountPath: /shared
   persistentVolumeClaimRetentionPolicy:
-    whenDeleted: Deleted
+    whenDeleted: Delete
     whenScaled: Retain
   volumeClaimTemplates:
   - metadata:
