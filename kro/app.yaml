@@ -4,6 +4,5 @@ metadata:
   name: my-application-instance
   labels:
     app.kubernetes.io/instance: kro-app
-    argocd.argoproj.io/instance: kro-app
 spec:
   name: my-awesome-app
