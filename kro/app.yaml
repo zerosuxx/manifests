@@ -3,6 +3,6 @@ kind: Application
 metadata:
   name: my-application-instance
   labels:
-    app.kubernetes.io/instance: my-application
+    app.kubernetes.io/instance: kro-app
 spec:
   name: my-awesome-app
